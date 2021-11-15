@@ -1,0 +1,23 @@
+Last session : How to create Spring Boot application using start.spring.io
+----------------------------------------------------------------------------------
+
+-> We can create sping boot application in 2 ways
+
+		a) Spring Initiazr website (start.spring.io)
+
+		b) Using IDE (Eclipse/STS/Intelli J)
+
+-> If we create application using initializr website it will be downloaded in zip format. We have to extract that zip file and import into IDE.
+
+
+
+
+
+
+
+
+
+
+
+
+

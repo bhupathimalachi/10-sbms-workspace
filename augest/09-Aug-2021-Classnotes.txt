@@ -1,0 +1,102 @@
+Last Session : Connection Pooling, Transaction Rollback, Timestamping
+--------------------------------------------------------------------------------
+Today's session : Composite Primary keys
+-------------------------------------------------------------------------------
+-> Connection pooling is the process of creating and storing connections in a pool once application got started.
+
+-> To achieve Atomocity if any operation is failed we are going to rollback all other operations also in the transaction. It means Either or all or None.
+
+		@Transaction(rollbackFor=Exception.class)
+
+-> Timestamping is the process of generating values for CREATED_DATE AND UPDATED_DATE columns
+
+		@CreationTimestamp
+
+		@UpdateTimestamp
+
+-> CREATED_DATE & UPDATED_DATE columns will help us in analyzing the table data.
+----------------------------------------------------------------------------------
+-> Primary Key is a constraint which is combination of below 2 constraints
+
+			1) UNIQUE
+			2) NOT NULL
+
+-> Primary key constraint will make sure our table contains unique data
+
+-> Primary Key is mandatory for the table to use ORM frameworks.
+
+-> To map Entity class variable to primary key column we will use @Id annotation
+
+-> To generate the value for Primary Key column we will use Generators.
+----------------------------------------------------------------------------------
+
+-> We can have more than one column as primary key in database table.
+
+-> If we have more than one column as primary key then we will call it as Composite Primary key.
+
+-> We can't use generators for composite primary key
+---------------------------------------------------------------------------------@Data
+@Entity
+@Table(name = "BANK_ACCOUNTS")
+@IdClass(AccountPK.class)
+public class Account {
+
+	@Column(name = "BRANCH_NAME")
+	private String branchName;
+
+	@Column(name = "MIN_BAL")
+	private Double minBal;
+
+	@Id
+	private Integer accId;
+
+	@Id
+	private String accType;
+
+	@Id
+	private String holderName;
+}
+--------------------------------------------------------------------------------
+@Data
+public class AccountPK implements Serializable {
+
+	private Integer accId;
+	private String accType;
+	private String holderName;
+
+}
+--------------------------------------------------------------------------------
+public interface AccountRepository extends JpaRepository<Account, AccountPK> {
+
+}
+--------------------------------------------------------------------------------
+@Service
+public class AccountService {
+
+	private AccountRepository accRepo;
+
+	public AccountService(AccountRepository accRepo) {
+		this.accRepo = accRepo;
+	}
+
+	public void saveAccData() {
+		Account acc = new Account();
+		acc.setBranchName("Ameerpet");
+		acc.setMinBal(5000.00);
+		
+		acc.setAccId(103);
+		acc.setAccType("SAVINGS");
+		acc.setHolderName("IBM");
+
+		accRepo.save(acc);
+	}
+}
+----------------------------------------------------------------------------------
+
+
+
+
+
+
+
+

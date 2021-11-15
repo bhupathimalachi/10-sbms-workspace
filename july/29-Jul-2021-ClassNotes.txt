@@ -1,0 +1,55 @@
+Last session : CrudRepository methods
+------------------------------------------------------------------------
+-> CrudRepository is a predefined interface available in Spring Data JPA
+
+-> This interface providing 12 methods to perform DB operations
+
+-> When our repository interface extending CrudRepository then we can access all those 12 methods
+
+1) save(Object T)
+2) saveAll(Iterable<Object> entities)
+
+3) findById(Serializable ID)
+4) findAllById(Iterable<Serializable> ids)
+5) findAll( )
+
+6) count()
+7) isExistsById(Serializable id)
+
+8) deleteById(Serializable id)
+9) deleteAllById(Iterable<Serializable> ids)
+10) delete(Object T)
+11) deleteAll(Iterable<Objects> entities)
+12) deleteAll ( )
+-------------------------------------------------------------------------
+Working with findByXXX methods in Spring Data JPA
+-------------------------------------------------------------------------
+-> If we want to retrieve records using Non Primary Key columns then we can go for findBy methods.
+
+-> When we write findBy methods, based on method name Data JPA will construct the query
+
+Note: Method Name will play important role in this process.
+----------------------------------------------------------------------------------
+public interface UserRepository extends CrudRepository<UserEntity, Serializable> {
+
+	public UserEntity findByEmail(String email);
+
+	public UserEntity findByUname(String name);
+
+	public List<UserEntity> findByAge(Integer age);
+
+	public UserEntity findByEmailAndUname(String email, String name);
+
+	public UserEntity findByAgeGreaterThan(Integer age);
+
+}
+----------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,67 @@
+Last session : Generators
+-------------------------------------------------------------------------
+
+-> Generators are used to generate the value for primary key.
+
+-> It is not at all recommended to ask end user to enter the value for primary key because they may enter duplicate value.
+
+-> Primary key is a constraint which is combination of below 2 constraints
+
+		1) NOT NULL
+		2) UNIQUE
+
+-> When we use generators application is responsible to generate the value for primary key column
+---------------------------------------------------------------------------------
+-> To generate value for primary key we used @GeneratedValue annotation
+
+-> If our underlying database is ORACLE then this annotation will use HIBERNATE_SEQUENCE to generate value for primary key.
+
+-> HIBERNTATE_SEQUENCE value will start from and will be incremented by 1.
+
+-> If our underlying database in MYSQL then this annotation will use AUTO_INCREMENT to generate value for primary key.
+
+NOTE: SEQUENCES are DB dependent. Oracle will support where as MYSQL will not support.
+-----------------------------------------------------------------------------------
+
+CREATE SEQUENCE STUDENT_ID_SEQ
+START WITH 1
+INCREMENT BY 1
+
+
+SELECT STUDENT_ID_SEQ.NEXTVAL FROM DUAL;
+---------------------------------------------------------------------------------------------
+@Entity
+@Table(name = "STUDENTS_TBL")
+public class Student {
+
+	@Id
+	@Column(name = "STUDENT_ID")
+	@SequenceGenerator(name = "s_id_seq", sequenceName = "student_id_seq", allocationSize=1)
+	@GeneratedValue(generator = "s_id_seq", strategy = GenerationType.SEQUENCE)
+	private Integer studentId;
+
+	@Column(name = "STUDENT_NAME")
+	private String studentName;
+
+	@Column(name = "STUDENT_EMAIL")
+	private String studentEmail;
+
+	@Column(name = "STUDENT_RANKS")
+	private Integer studentRank;
+----------------------------------------------------------------------------------------------
+Custom Generator Example : https://www.youtube.com/watch?v=IijGVtT9ZPk
+---------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+

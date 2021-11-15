@@ -1,0 +1,92 @@
+20-Jul-2021 Session : We discussed bean scopes
+
+21-Jul-2021 Session : No session
+
+22-Jul-2021 Sesssion : Runners in Spring Boot
+------------------------------------------------------------------------
+-> Runners are used to execute the logic only one time once application got started.
+
+-> Spring Boot support for 2 types of Runners
+
+		1) ApplicationRunner
+		2) CommandLineRunner
+
+-> ApplicationRunner and CommandLineRunner both are functional interfaces. They contain one abstract method i.e run ( )
+
+-> The logic that we want to execute through runner we will write inside run( ) method.
+------------------------------------------------------------------------
+package in.ashokit.runner;
+
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.stereotype.Component;
+
+@Component
+public class MyAppRunner implements ApplicationRunner {
+
+	@Override
+	public void run(ApplicationArguments args) throws Exception {
+		System.out.println("MyAppRunner :: run () Method Got Called");
+	}
+}
+------------------------------------------------------------------------
+package in.ashokit.runner;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+@Component
+public class MyCmdRunner implements CommandLineRunner {
+
+	@Override
+	public void run(String... args) throws Exception {
+		System.out.println("MyCmdRunner :: run () Method Got Called");
+	}
+
+}
+------------------------------------------------------------------------
+
+1) What is Spring Framework?
+2) What is Spring Boot?
+3) Spring vs Spring Boot
+4) Advantages of Spring Boot
+5) Spring Boot Starters
+6) Spring Initializr website (start.spring.io)
+7) Spring Boot First application creation
+8) Boot App creation using IDE
+9) Spring Boot Application Folder Structure
+10) Start class in Spring Boot
+11) SpringApplication.run ( ) method
+12) @SpringBootApplication
+13) Auto Configuration
+14) Component Scanning
+15) Package Naming Conventions
+16) IOC Container
+17) Dependency Injection (CI, SI, FI)
+18) Why Field Injection Not Recommended
+19) Autowiring
+20) @Primary & @Qualifier
+21) Bean Scopes
+22) Stereotype Annotations
+23) @Configuration & @Bean annotations
+24) Runners in Spring Boot		
+25) Banner in Spring Boot
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,105 @@
+Last session : Completed Part-01 of our course (SBMS)
+------------------------------------------------------------------------
+Today's session : Spring Data JPA (Part-02 of SBMS)
+------------------------------------------------------------------------
+1) What is Persistence Layer?
+Ans) Persistence layer contains components which are responsible to communicate with database.
+------------------------------------------------------------------------
+Best Practises To Follow In Persistence Layer
+------------------------------------------------------------------------
+1) For Every table we shuld have a seperate DAO
+
+		USER_MASTER -----------> UserMasterDao.java
+
+		ROLE_MASTER -----------> RoleMasterDao.java
+
+		User_ROLES ------------> UserRolesDao.java
+
+		DC_CASES --------------> DcCasesDao.java
+
+2) For every table we shold maintain atleast one Primary key
+
+	Primary key = Not Null + unique
+
+
+3) In every table we shoud maintain below 4 columns for data analysis
+
+		CREATED_DATE
+		UPDATED_DATE
+		CREATED_BY
+		UPDATED_BY
+
+4) We should not ask end user to enter value for Primary Key Column because they may enter duplicate value.
+
+5) We will use Generators to generate the value for Primary key
+
+6) We should not use physical connections to communicate with database.
+
+7) We should maintain connection pooling for db connections
+
+8) We should manage transactions in our applications
+
+9) We should maintain cache for static tables data
+
+10) We should use Profiles concept to maintain environment specific configuration.
+------------------------------------------------------------------------
+What is ORM?
+------------------------------------------------------------------------
+-> ORM stands for Object Relational Mapping
+
+-> This ORM is very famous technique which is used to develop persistence layer.
+
+-> Below are the main components in ORM
+
+		1) Entity
+		2) Mapping
+		3) Configuration
+
+-> The java class which is mapped with data base table is called as Entity.
+
+-> To map java class with db table we will use annotations
+
+		@Entity
+		@Table
+		@Id
+		@Column
+
+-> DataSource details we will configure in application.properties or application.yml file.
+------------------------------------------------------------------------
+-> In java applications we can develop persistence layer in below ways
+
+		1) JDBC
+		2) Spring JDBC
+		3) Hibernate
+		4) Spring ORM
+		5) Spring Data JPA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

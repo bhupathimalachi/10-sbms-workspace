@@ -1,0 +1,82 @@
+Last Session : Form Based Application Development
+--------------------------------------------------------------------------------
+
+-> Forms are used to collect data from users
+
+-> Forms will be submitted with POST request
+
+-> When we submit POST request to server, data will go in the request body
+
+-> Sending data in the request body is safe operation
+
+-> In servlets we will use request.getParameter(key) to capture form data.
+
+-> Spring MVC supports Form binding mechanism
+
+-> Taking data from the form and storing into object is called as form binding.
+---------------------------------------------------------------------------------
+
+-> To develop dynamic forms, Spring MVC provided form tag library.
+
+-> Spring MVC form tag library contains several tags to simplify form development
+
+	<form:form/>
+	<form:input/>
+	<form:password/>
+	<form:radioButton/> & <form:radioButtons/>
+	<form:select>
+	<form:option> & <form:options/>
+	<form:checkbox> & <form:checkboxes>
+	<form:hidden/>
+	<form:error/>
+---------------------------------------------------------------------------------
+Requiement: Develop a student registration form using Spring MVC Form tag library
+--------------------------------------------------------------------------------
+1) CREATE BELOW 3 TABLES 
+
+	GENDERS
+	COURSES
+	TIMINGS
+
+Note: Table structure given in paint diagram
+
+2) Insert required data into above 3 tables
+		
+3) Create Spring Boot application with below dependencies
+
+	i) spring-boot-starter-web
+	ii) spring-boot-starter-data-jpa
+	iii) oracle-driver
+	iv) tomcat-embed-jasper
+	v) project-lombok
+
+4) Configure below properties in application.properties file
+
+	i) server-port
+	ii) datasource props
+	iii) viewresolver props
+
+5) Create Entity classes & Repository interfaces
+
+6) Create Service Layer class with required methods
+
+7) Create Controller to handle request
+
+8) Create View files with presentation logic
+
+9) Run the application and test it.
+
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+

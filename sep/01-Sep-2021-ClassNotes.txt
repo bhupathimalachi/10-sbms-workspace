@@ -1,0 +1,201 @@
+Last session : Form validations in Boot web application
+-------------------------------------------------------------------------
+Today's session : Thymeleaf
+-------------------------------------------------------------------------
+-> In spring boot applications we can use multiple presentation technologies
+
+		1) Jsp
+		2) Thymeleaf
+
+2) Jsp stands for java server pages which is used to develop presentation logic
+
+3) When request comes to jsp, it will be converted to servlet and that will execute to produce the result
+
+-----------------------------------------------------------------------
+-> Thymeleaf is a modern server-side Java template engine for both web and standalone environments.
+
+-> Thymeleaf is true template engine
+
+-> Using thymeleaf we can make Html pages dynamic
+
+-> To work with Thymeleaf spring boot provided below starter
+
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-thymeleaf</artifactId>
+	</dependency>
+
+--------------------------------------------------------------------------------
+Steps to develop Spring Boot application with Thymeleaf
+---------------------------------------------------------------------------------
+1) create boot application with below dependencies
+
+		i)spring-boot-starter-web
+		ii) spring-boot-starter-thymeleaf
+		iii) devtools
+
+2) Configure server port number in application.properties file
+
+3) Create Controller class with required methods
+
+4) Create HTML files under src/main/resources/templates folder with thymeleaf engine
+
+5) Run the application and test it.
+
+----------------------------------------------------------------------------------
+package in.ashokit.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class WelcomeController {
+
+	@GetMapping("/welcome")
+	public String getWelcomeMsg(Model model) {
+		model.addAttribute("msg", "Welcome to Ashok IT..!!");
+		return "index";
+	}
+
+}
+---------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<p th:text="'Hello, ' + ${msg} + '!'" />
+
+</body>
+</html>
+----------------------------------------------------------------------------------
+Developing Form based application using thymeleaf
+----------------------------------------------------------------------------------
+1) Add below dependencies in pom.xml
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+
+2) configure server.port in application.properties file
+
+3) Create Form Binding Class to bind form data
+
+public class Book {
+
+	private Integer bookId;
+	private String bookName;
+	private String bookPrice;
+	private String stockStatus;
+
+	//setters & getters
+}
+
+4) Create Controller class with required methods
+
+
+@Controller
+public class BookController {
+
+	@GetMapping(value = { "/", "/addBook" })
+	public String loadForm(Model model) {
+		Book b = new Book();
+		model.addAttribute("book", b);
+		return "addBook";
+	}
+
+	@PostMapping(value = "/addBook")
+	public String handleSubmitBtn(Book book, Model model) {
+		System.out.println(book);
+		return "bookDtls";
+	}
+}
+
+5) Create template files under src/main/resources/templates folder
+
+-------------------------addBook.html-------------------------------------------
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h2>Add Book</h2>
+
+	<form th:action="@{/addBook}" th:object="${book}" method="POST">
+		<table>
+			<tr>
+				<td>Book Id</td>
+				<td><input type="text" th:field="*{bookId}" /></td>
+			</tr>
+			<tr>
+				<td>Book Name</td>
+				<td><input type="text" th:field="*{bookName}" /></td>
+			</tr>
+			<tr>
+				<td>Book Price</td>
+				<td><input type="text" th:field="*{bookPrice}" /></td>
+			</tr>
+			<tr>
+				<td>Stock Available</td>
+				<td><input type="radio" th:field="*{stockStatus}" value="available" /> Yes 
+				<input type="radio" th:field="*{stockStatus}" value="not-available" /> No</td>
+			</tr>
+			<tr>
+				<td><input type="Submit" value="Submit" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
+--------------------------------bookDtls.html------------------------------------
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h3>Book Details</h3>
+
+	Book ID : <p th:text="${book.bookId}"></p>
+	<br /> Book Name : <p th:text="${book.bookName}"></p>
+	<br /> Book Price: <p th:text="${book.bookPrice}"></p>
+	<br /> Stock : <p th:text="${book.stockStatus}" />
+
+	<a href="addBook">Go Back</a>
+
+</body>
+</html>
+-------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+

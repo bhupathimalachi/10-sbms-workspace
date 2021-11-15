@@ -1,0 +1,128 @@
+Last session : How to write findBy methods
+-------------------------------------------------------------------------
+-> If we want to retrieve the data from tables using Non-Primary Key columns in the where clause then we can use findBy methods.
+
+-> In this approach, based on method name, data jpa will construct the query and will execute it.
+---------------------------------------------------------------------------------
+Today's session : Working with Custom Queries in Data JPA
+----------------------------------------------------------------------------------
+-> In this approach we will write the query and we will execute it.
+
+-> Custom Queries we can execute in 2 ways
+
+		1) Native SQL Queries
+		2) HQL Queries
+----------------------------------------------------------------------------------
+-> Native SQL queries are database dependent queries
+
+-> Native SQL queries contains table name and column names
+
+-> If we change our application communication from one database to another database then few native sql queries may not support then we have to change them in our application.
+
+-> If we want to change from one DB to another DB entire application re-testing is required.
+
+----------------------------------------------------------------------------------
+-> To avoid the problems of Native SQL queries, we will use HQL queries 
+
+-> HQL stands for Hibernate Query Language
+
+-> HQL queries are database independent queries
+
+-> In HQL queries we will use Entity class name and entity class variable names.
+
+-> HQL queries can't be executed in database directley. HQL queries will be converted into SQL queries before exeuction.
+
+-> HQL queries will be converted into SQL queries by Dialect classes.
+----------------------------------------------------------------------------------
+
+
+
+SQL : select * from user_details;
+HQL : from UserEntity;
+
+SQL : select * from user_details where user_id=101;
+HQL : from UserEntity where userId=101;
+
+SQL : select * from user_details where user_id=101 and user_name='raju';
+HQL : from UserEntity where userId=101 and username ='Raju';
+
+SQL : select user_id, user_name where user_age =30;
+HQL : select userId, username where userAge=30;
+
+---------------------------------------------------------------------------------
+package in.ashokit.repository;
+
+import java.io.Serializable;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+
+import in.ashokit.entity.UserEntity;
+
+public interface UserRepository extends CrudRepository<UserEntity, Serializable> {
+
+	@Query("from UserEntity where email=:email")
+	public UserEntity findUserByEmail(String email);
+
+	@Query("select userId, uname from UserEntity where age=:age")
+	public Object[] findUserByAge(Integer age);
+	
+	@Query(value="select * from user_details where user_id=:userId", nativeQuery=true)
+	public UserEntity findUserById(Integer userId);
+
+}
+---------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

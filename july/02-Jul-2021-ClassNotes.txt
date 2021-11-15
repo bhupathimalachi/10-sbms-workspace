@@ -1,0 +1,82 @@
+Note: Daily before joining the session please check your email
+
+-> If zoom link got changed for 10-SBMS batch we will send that new link in email.
+
+-> Our batch updates will be given in Telegram Group (10-SBMS@6:30AM)
+
+-> Our batch updates we will send in email (Subject: 10-SBMS @6:30 AM)
+-----------------------------------------------------------------------------------
+
+-> In last session we discussed about internals of run ( ) method.
+
+-> run ( ) method is performing bootstrapping process for spring boot application.
+
+-> After completion of bootstrapping run ( ) method will return ConfigurableApplicationContext.
+----------------------------------------------------------------------------------
+
+-> When our application started, SpringApplication class will be loaded and its constructor will be executed.
+
+-> In SpringApplication class constructor they are calling deduceFromClassPath( ) method. This method is responsible to identify what type of boot application we have created.
+
+-> In Spring Boot we can create below 3 types of applications
+
+			1) Reactive Application
+			2) Web Servlet Application
+			3) Default Application
+
+-> Based on starters we configure in pom.xml it will identify what type of project it is.
+
+
+	spring-boot-starter-webflux =====> Reactive App
+	spring-boot-starter-web =========> Web Servlet App
+	spring-boot-starter =============> Standalone Application
+
+-> Based on type of the application boot will identify the configuration which is required and it will provide that configuration.
+-----------------------------------------------------------------------------------
+-> In Spring framework we will create IOC container using below approaches
+
+BeanFactory factory = new XmlBeanFactory (Resource res);
+ApplicationContext ctxt = new ClassPathXmlApplicationContext(String loc);
+---------------------------------------------------------------------------------
+-> Programmer no need to create IOC container in Spring Boot.
+
+-> In Spring Boot IOC creation will be taken care by run ( )
+
+-> In Spring Boot, based on our application type IOC will be created.
+
+
+Standlone : AnnotationConfigApplicationContext
+
+WebServlet: AnnotationConfigServletWebServerApplicationContext
+
+Reactive: AnnotationConfigReactiveWebServerApplicationContext
+
+
+
+
+Please complete payment & send below details to -> ashokitpayments@gmail.com
+
+1) Name & Contact Number
+3) Course Code (10-SBMS)
+4) Timings
+5) Payment screenshot  
+
+Bank Account Details
+-----------------------------
+Bank Name : State Of Bank India
+Branch Name : Atmakur
+Account Holder Name : Chintamaneni Jyothi
+Account Number : 39945460240
+IFSC Code : SBIN0018828
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,80 @@
+Last Session : Thymeleaf Introduction & Example
+-------------------------------------------------------------------------
+-> Thymeleaf is a template engine
+
+-> Using Thymeleaf we can develop dynamic web pages
+
+-> Thymeleaf template engine we will use in HTML pages
+
+-------------------------------------------------------------------------
+-> To develop web applications we are using below starter
+
+	-> spring-boot-starter-web
+
+-> When we add spring-boot-starter-web dependency it is providing below functionalities
+
+	-> Web application development
+	-> RESTful services development
+	-> Spring MVC support
+	-> Tomcat Embedded Server
+
+Note: In spring boot web applications tomcat server acting as default embedded container.
+--------------------------------------------------------------------------------------------
+Q) How to configure Jetty as deafult embedded container ?
+
+Step-1 : Exclude tomcat-starter from web-starter in pom.xml
+
+Step-2 : Add Jetty starter in pom.xml
+
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jetty</artifactId>
+		</dependency>
+
+---------------------------------------------------------------------------------------------
+
+-> Spring Boot applications we can deploy in external server also
+
+-> Package spring boot application using maven goal (package)
+
+-> Take the war file and keep in Tomact server webapps folder
+
+-> Run the server
+
+---------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+

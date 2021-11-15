@@ -1,0 +1,37 @@
+Last Session : First Application Development Completed Using Data JPA
+
+Today's Session : Spring Data JPA Internals
+-------------------------------------------------------------------------
+-> Spring Data JPA came into market to simplify CRUD operations in the application.
+
+-> Before Data JPA, we used to write lot of boiler plate code to perform Crud Operations.
+
+-> Data JPA Provided Repository interfaces to perform CRUD operations.
+
+		1) CrudRepository
+		2) JpaRepository
+
+-> If our interface extend properties from any one of above repository then our interface will get methods to perform Crud operations.
+
+
+public interface UserRepository extends CrudRepository<T, ID>{
+
+}
+
+-> First Argument Represents Entity Class
+-> Second Argument Represents DataType of Primary Key
+
+Note: @Repository is optional.
+
+
+
+
+
+
+
+
+
+
+
+
+

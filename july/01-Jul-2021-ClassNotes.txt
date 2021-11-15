@@ -1,0 +1,26 @@
+Last session (Session-06) : What is start class in Spring Boot?
+-----------------------------------------------------------------------
+All previous sessions available in our youtube channel (Ashok IT)
+------------------------------------------------------------------------
+Today session (Session-07) : Internals of Boot start class
+------------------------------------------------------------------------
+-> When we create boot application we will get start class by default.
+
+-> Start class is the entry point for boot application execution.
+
+-> start class is also called as main class in spring boot.
+
+
+@SpringBootApplication
+public class Application{
+
+   public static void main(String[] args){
+	SpringApplication.run(Application.class, args);
+   }
+}
+
+
+
+
+
+

@@ -1,0 +1,102 @@
+Today's Session (16-Aug-2021) : Spring Web MVC Module
+---------------------------------------------------------------------------------
+
+-> Spring Web MVC is one of the module in Spring Framework
+
+-> By Using Spring Web MVC Module we can build 2 types of applications
+
+		1) Web applications
+		2) Distributed Applications
+
+-> Web applications are meant for Customer to Business Communication (C2B)
+
+	Ex: gmail, facebook, irctc, makemytrip etc..
+
+-> Distributed applications are meant for Business to Business Communication (B2B)
+
+	Ex :	Passport app <-----------> AADHAR app
+
+		flipkart <-------------> Internet Bank apps
+
+-> Spring Web MVC Module is developed based on 2 design patterns
+
+		1) MVC Design Pattern
+		2) Front Controller Design Pattern
+
+-> MVC desgin pattern is used to achieve loosely coupling among components
+
+		M ---> Model  (It represents data)
+		V ---> View   (It represents presentation logic)
+		C ---> Controller (It contains request handling logic)
+
+-> FrontController Design Pattern is used to perform Pre-Processing and Post-Processing of every request.
+
+-> In Spring Web MVC, DispatcherServlet will act as Front Controller. It is responsible to perform pre-processing and post-processing of a request.
+
+----------------------------------------------------------------------------------
+Spring Web MVC Architecture
+----------------------------------------------------------------------------------
+1) DispatcherServlet
+2) HandlerMapper
+3) Controller
+4) ModelAndView
+5) ViewResolver
+6) View
+----------------------------------------------------------------------------------
+-> DispatcherServlet is a predefined servlet class available in Spring MVC module. It acts as Front Controller and it is responsible for pre-processing and post-processing of a request.
+
+-> HandlerMapper is responsible to identify which request should be processed by which controller.
+
+-> Controller is called as Request Handler and it is responsible to handle the request.
+
+-> After request processing got completed, Controller method will return ModelAndView object.
+
+		Model -> Represents data in key-value format
+
+		View -> Logical File Name (jsp/thymeleaf etc)
+
+Note: In Spring Web MVC, Controllers don't know which presentation technology is used in the project.	
+
+-> ViewResolver is used to identify view files available in our application
+
+		prefix + viewname + suffix
+
+-> View Component is used to render model data on the view file
+
+----------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+

@@ -1,0 +1,57 @@
+Session-1 : We discussed Course Content
+
+Session-2: What is Spring Framework
+
+Session-3: What is Spring Boot & Advantages of Spring Boot
+------------------------------------------------------------------------
+Today's session: How to create Spring Boot Application
+------------------------------------------------------------------------
+
+-> Spring Boot is an approach to develop Spring Based applications with Minimal Or less configuration.
+
+-> Spring Boot having several advantages
+
+		1) Starter Poms
+		2) Version Management
+		3) Auto Configuration
+		4) Embedded Servers
+		5) Actuators etc...
+
+-> Starter Poms are used to simplify maven configuration
+
+-> For Dependencies we no need to write version number
+
+-> Spring Boot is intelligent to understand what configuration is required for our application and it will take care of that.
+
+-> To run web applications we need to setup servers, but Spring Boot will take of servers to run web applications (It is having embedded servers)
+
+-> Actuators are used for Monitoring and managing our applications (Production Ready Features)
+-------------------------------------------------------------------------
+How to create Spring Boot Application
+-------------------------------------------------------------------------
+-> We can create Spring Boot application in 2 ways
+
+		1) Spring Initiazr (start.spring.io) website
+		2) IDE 
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

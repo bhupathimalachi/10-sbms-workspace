@@ -1,0 +1,123 @@
+Last Session : How to send data from controller to UI
+
+Today's session: How to recieve data from UI to Controller
+--------------------------------------------------------------------------------
+
+-> To recieve data from UI to controller we have below options
+
+		1) Query Parameters
+
+		2) Path Parameters
+
+		3) Request Body
+
+Query Parameters
+==================
+-> Query Parameter will re-present data in URL in the form of Key-value pair
+
+	Ex : www.ashokit.in/course?name=SBMS
+
+-> Query parameters will start with ? symbol
+
+-> Query Parameters will be seperated by & symbol
+
+	Ex: www.ashokit.in/course?name=SBMS&trainer=Ashok
+
+-> Query Paramers will present only at end of the URL
+
+-> Query Parameters are used to send data from UI to server in URL
+
+-> To read Query Parameter value we will use @RequestParam annotation
+
+Path Parameters
+===============
+-> Path Parameters will represent data in URL directley without key
+	
+	Ex: www.ashokit.in/course/{name}/details
+
+-> Path Parameters can present any where in the URL
+
+-> Path Parameter will start with / symbol and will be seperated by / symbol only
+
+-> To read Path Parameter values we will use @PathVariable annotation in controller
+
+----------------------------------------------------------------------------------
+package in.ashokit.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+public class WishController {
+
+	@GetMapping("/welcome")
+	public String welcomeMsg(@RequestParam("name") String name, Model model) {
+
+		String msgTxt = "Hi " + name + ", Welcome to Ashok IT..!!";
+
+		model.addAttribute("msg", msgTxt);
+
+		return "index";
+	}
+
+}
+----------------------------------------------------------------------------------
+package in.ashokit.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+public class CourseController {
+
+	@GetMapping("/course")
+	public String courseDetails(@RequestParam("coursename") String cname, @RequestParam String tname, Model model) {
+
+		String msgTxt = "";
+
+		if (cname.equals("SBMS") && tname.equals("Ashok")) {
+			msgTxt = cname + " By " + tname + " starting from 20-Aug-2021 @8:00 PM IST";
+		} else {
+			msgTxt = "Please visit www.ashokit.in for more details";
+		}
+
+		model.addAttribute("msg", msgTxt);
+
+		return "index";
+	}
+
+}
+----------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

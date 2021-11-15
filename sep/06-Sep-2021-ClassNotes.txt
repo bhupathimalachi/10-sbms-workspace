@@ -1,0 +1,77 @@
+RESTful Services & Microservices (Using Spring Boot)
+==================================================================================
+
+Course Content
+-------------------
+1) What is distributed application
+2) Distributed Technologies
+3) XML & JAX-B Api (Marshalling & Un-Marshalling)
+4) JSON & JACKSON Api (Serialization & De-Serialization)
+5) HTTP Protocol
+6) HTTP Methods
+7) HTTP Status Codes
+8) HTTP Request Format
+9) HTTP Response Format
+
+10) Introduction to RESTFul Services
+11) RESTFul Services Architecture
+12) REST Principles
+13) Spring with REST Details
+14) Spring with REST Annotations
+15) @RestController
+16) @GetMapping, @PostMapping, @PutMapping, @DeleteMapping
+17) @RequestParam (Query Parameter)
+18) @PathVariable (URI Parameter)
+19) @RequestBody & @ResponseBody
+20) ResponseEntity
+21) REST Client Introduction
+22) RestTemplate
+23) WebClient
+24) Synchronus vs Asynchronus Communication
+25) Mono objects & Flux Objects
+26) Swagger & Postman
+27) Exception Handling in REST API
+28) Securing REST APIs
+
+
+Microservices
+---------------
+1) Monolith Architecture
+2) Drawbacks of Monlith Architecture
+3) Microservices Introduction
+4) Advantages of Microservices
+5) Challenges with Microservices
+6) Microservices Architecture
+7) Service Registry (Eureka Server)
+8) REST API development
+9) API Gateway (Zuul Proxy)
+10) Interservice Communication using FeignClient
+11) Mini Project using Microservices
+12) Actuators
+13) Spring Admin Server & Admin Client
+14) Circuit Breaker with Resillience4J
+15) Connecting with Multiple Databases
+16) Distributed Log Tracing with Sleuth & Zipkin
+17) Load Balancing (Ribbon)
+18) Apache kafka
+19) Redis Cache
+20) Spring Security (In-Memory Auth & JDBC Auth)
+21) OAuth2.0
+22) JWT
+23) Angular Integration
+24) Docker
+25) REST API Unit Testing Using JUnit5 with Mocking
+26) Logging in Microservices
+27) Cloud Platforms Introduction
+
+
+Course Duration : 2 Months
+Class Timings: 6:30 AM - 7:30 AM IST
+Daily classnotes will be shared
+
+Fee: 4000 INR (Live class + daily class notes will be shared) - No video
+Fee : 7000 INR (live class + notes + daily backup video with 1 month access)
+
+
+
+

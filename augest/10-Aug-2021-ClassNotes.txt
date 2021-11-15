@@ -1,0 +1,60 @@
+Last Session : What is Composite Primary key & How to work with it
+-------------------------------------------------------------------------
+-> If table contains more than one primary key then we will call it as Composite Primary key.
+
+-> We can't use GEnerators for composite primary keys
+
+-> In db table, composite primary key columns data combination shouldn't be repeated.
+---------------------------------------------------------------------------------
+1) What is Spring Data JPA?
+
+2) What are the advantages of Spring Data JPA?
+
+3) What are Repositories available in Data JPA?
+		i) CrudRepository
+		ii) JpaRepository
+
+4) CrudRepository interface methods
+
+5) findByXXX methods
+
+6) Custom Queries Execution using @Query annotation
+
+7) SQL vs HQL
+
+8) What is Dialect class?
+
+9) What is Pagination & Sorting ?
+
+10) Connection Pooling
+
+12) Transaction Rollbacks
+
+13) Timestamping
+
+14) Primary Keys & Generators
+
+15) Composite Primarykey
+
+16) Query By Example (QBE)
+--------------------------------------------------------------------------------------------
+Profiles in Spring Boot : https://www.youtube.com/watch?v=I8r858beW0o (watch 2day)
+--------------------------------------------------------------------------------------------
+Pending Concept in Data JPA : Mappings in Data JPA (Will discuss in cmng classes)
+--------------------------------------------------------------------------------------------
+Today & Tomorrow : Practise all examples from Part-1 & Part-2 of our SBMS course
+--------------------------------------------------------------------------------------------
+11-Aug-2021: We  don't have classes tomorrow
+-------------------------------------------------------------------------------------------
+-> We will start Spring Web MVC (Part-03) on 12-Aug-2021 @6:30 AM IST
+---------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+

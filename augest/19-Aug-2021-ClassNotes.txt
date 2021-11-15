@@ -1,0 +1,112 @@
+Last Session : Web application using Spring Boot
+-------------------------------------------------------------------------
+
+-> We have developed application to send data from Controller to UI
+
+-> To send data from Controller to UI we will use Model / ModelAndView objects
+
+-> Model is a map which represents data in the form of Key-Value pair
+
+-> In presentation file we can access value using key
+-----------------------------------------------------------------------
+package in.ashokit.rest;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import in.ashokit.model.Book;
+
+@Controller
+public class BookController {
+
+	@GetMapping("/book")
+	public String getBookData(Model model) {
+
+		Book bookObj = new Book(101, "Spring", 450.00);
+
+		model.addAttribute("book", bookObj);
+
+		return "book";
+
+	}
+
+	@GetMapping("/books")
+	public String getBooks(Model model) {
+
+		Book bookObj1 = new Book(101, "Spring", 450.00);
+		Book bookObj2 = new Book(102, "Hibernate", 550.00);
+		Book bookObj3 = new Book(103, "Webservices", 400.00);
+
+		List<Book> booksList = new ArrayList<>();
+		booksList.add(bookObj1);
+		booksList.add(bookObj2);
+		booksList.add(bookObj3);
+
+		model.addAttribute("books", booksList);
+
+		return "books";
+	}
+
+}
+------------------------------------------------------------------------
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h2>Book Data</h2>
+
+	Book ID : ${book.bookId}
+	<br /> Book Name: ${book.bookName}
+	<br /> Book Price: ${book.bookPrice}
+
+</body>
+</html>
+-------------------------------------------------------------------------
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Books</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<td>Book ID</td>
+				<td>Book Name</td>
+				<td>Book Price</td>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${books}" var="book">
+				<tr>
+					<td>${book.bookId}</td>
+					<td>${book.bookName}</td>
+					<td>${book.bookPrice}</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+
+	</table>
+
+
+
+</body>
+</html>
+-------------------------------------------------------------------------

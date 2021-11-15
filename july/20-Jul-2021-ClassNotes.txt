@@ -1,0 +1,67 @@
+Last session : Autowiring & Modes Of Autowiring
+------------------------------------------------------------------------
+Today's topic : Bean Scopes
+------------------------------------------------------------------------
+-> Bean Scope will decide how many objects should be created for bean class by IOC container.
+
+-> In Spring we have below scopes for beans
+
+		1) singleton (default)
+		2) prototype
+		3) request
+		4) session
+		5) global (It removed from Spring 3.0)
+
+-> By default all spring beans are singleton scope that means IOC container will create only one object for the class.
+
+-> Prototype scope is used to create new object everytime.
+
+-> request & session scopes we will use in Spring Web MVC based applications.
+------------------------------------------------------------------------
+
+@Component
+@Scope(value = "prototype")
+public class Car {
+
+	public Car() {
+		System.out.println("****** Car :: Constructor *******");
+	}
+}
+----------------------------------------------------------------------
+	@Bean
+	@Scope(value = "prototype")
+	public Engine getEngine() {
+		Engine eng = new Engine();
+		return eng;
+	}
+
+------------------------------------------------------------------------
+-> To specify scope for a bean we will use @Scope annotation like above.
+
+-> @Scope annotation we can use at class level and method level (@Bean)
+
+------------------------------------------------------------------------
+
+-> When our Spring Boot application started, IOC will create object for only Singleton scoped beans. Singleton is the default scope for Spring Bean.
+
+-> For Prototype scoped beans objects will be created on demand basis.
+------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

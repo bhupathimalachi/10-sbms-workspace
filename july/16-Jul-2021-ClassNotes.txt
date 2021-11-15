@@ -1,0 +1,111 @@
+Last session : Field Injection
+-------------------------------------------------------------------------
+-> The process of injecting dependent bean obj into target bean obj through target bean variable is called as Field Injecton.
+
+-> To enable Field Injection we will specify @Autowired annotation at field level.
+
+
+@Service
+public class UserService{
+	
+	@Autowired
+	private UserDao userdao;
+}
+
+-> Internally IOC will use Reflection api to perform Field Injection.
+
+-> Field Injection not recommended because
+
+	1) Doesn't support for Immutable objects
+	2) Violates Single Responsibility Principles
+	3) Hidden dependencies etc..
+-------------------------------------------------------------------------
+Q) Can we do both setter & Constructor injection for same variable?
+
+Ans) Yes we can do but setter injection will override constructor injection.
+
+-> Constructor injection will happen at the time of object creation.
+
+-> Setter injection will happen after the object creation.
+
+
+@Service
+public class UserService{
+
+    private UserDao userdao;
+
+    public UserService(UserDao userdao){
+	this.userdao = userdao;
+    }
+    
+    @Autowired
+    public void setUserdao(UserDao userdao){
+         this.userdao = userdao;
+    }
+}
+----------------------------------------------------------------------------------
+IOC
+DI
+CI
+SI
+FI
+---------------------------------------------------------------------------------
+-> In order to perform Dependency Injection we are using @Autowired
+
+-> If we are using @Autowired annotation that means we are giving instruction to IOC to identify dependent bean object and inject into target bean object.
+
+-> @Autowired annotation we can specify at below 3 places
+	
+		-> Constructor Level
+
+		-> Setter Method Level
+
+		-> Variable Level	
+
+
+-> Autowiring will work based on modes
+
+		-> byType
+		-> byName
+		-> no
+
+-> "byType" means auto-wiring will happen based on data type of the variable
+
+-> "byName" means auto-wiring will happen based on variable name
+
+-> "no" means auto-wiring will not happen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

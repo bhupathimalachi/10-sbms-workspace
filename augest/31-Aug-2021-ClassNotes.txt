@@ -1,0 +1,177 @@
+Last Session : Student Registration Form implementation
+-------------------------------------------------------------------------
+
+-> Student Registration form contains below fields
+
+		name
+		email
+		phno
+		gender
+		course
+		preferrable timings
+
+-> Student can select more than one preferrable timing
+
+-> To store student registration data we are using two tables
+
+		student_dtls
+		student_timings_dtls
+
+------------------------------------------------------------------------
+Form Validations
+-----------------------------------------------------------------------
+
+1) Develop spring boot application with below dependencies
+
+		i) spring-boot-starter-web
+		ii) spring-boot-starter-validation
+		iii) tomcat-embed-jasper
+		iv) devtools
+
+2) Create Form Binding class like below
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+public class User {
+
+	@NotEmpty(message = "Please enter username")
+	private String uname;
+
+	@NotEmpty(message = "Please enter password")
+	private String pwd;
+
+	@NotEmpty(message = "Please enter email")
+	@Email(message = "Please enter valid email")
+	private String email;
+
+	@NotNull(message = "Please enter phno")
+	private Long phno;
+		
+	//setters & getters
+}
+
+
+3) Create Controller class like below
+
+package in.ashokit.controller;
+
+import javax.validation.Valid;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import in.ashokit.binding.User;
+
+@Controller
+public class UserController {
+
+	@GetMapping("/user-form")
+	public String loadUserForm(Model model) {
+
+		User userObj = new User();
+		model.addAttribute("user", userObj);
+
+		return "index";
+	}
+
+	@PostMapping("/saveUser")
+	public String saveUser(@Valid User user, BindingResult result, Model model) {
+
+		if (result.hasErrors()) {
+			return "index";
+		}
+
+		System.out.println(user);
+		model.addAttribute("msg", "User saved successfully");
+		return "dashboard";
+	}
+
+}
+
+4) Create View file using Spring mvc form tag library
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<style>
+.error {
+	color: red;
+}
+</style>
+
+</head>
+<body>
+
+	<h3>User Form</h3>
+
+	<form:form action="saveUser" modelAttribute="user" method="POST">
+
+		<table>
+			<tr>
+				<td>Username:</td>
+				<td><form:input path="uname" /></td>
+				<td><form:errors path="uname" class="error" /></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><form:password path="pwd" /></td>
+				<td><form:errors path="pwd" class="error" /></td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><form:input path="email" /></td>
+				<td><form:errors path="email" class="error" /></td>
+			</tr>
+			<tr>
+				<td>Phone Number:</td>
+				<td><form:input path="phno" /></td>
+				<td><form:errors path="phno" class="error" /></td>
+			</tr>
+
+			<tr>
+				<td><input type="submit" value="Save" /></td>
+			</tr>
+		</table>
+
+	</form:form>
+
+
+</body>
+</html>
+
+5) Configure port number and view resolver in application.properties file
+
+6) Run the application and test it.
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

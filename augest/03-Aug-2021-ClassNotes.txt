@@ -1,0 +1,97 @@
+Last Session: JpaRepository & Methods available in JpaRepository
+------------------------------------------------------------------------
+
+-> Using JpaRepository we can perform below operations
+
+		1) Crud Operations
+		2) Sorting
+		3) Pagination
+		4) Query By Example
+
+-> Sorting technique we will use to sort the data while retriving
+
+		findAll(Sort.by("uname").ascending());
+
+
+-> Query By Example is used to construct the query dynamically based on values available in Entity class obj.
+
+		UserEntity entity = new UserEntity();
+		entity.setUname("ashok");
+		entity.setAge(29);
+
+		Example of = Example.of(entity);
+
+		findAll(of);
+
+------------------------------------------------------------------------
+Pagination
+-----------------------------------------------------------------------
+-> Pagination is the process of dividing total records into multiple pages.
+
+	PageRequest pageReq = PageRequest.of(pageNo, pageSize);
+	findAll(pageReq);
+
+-------------------------------------------------------------------------
+-> In Order to execute custom queries for insert, update and delete we will use below annotations in data jpa
+
+		@Modifying
+		@Transactional
+		@Query
+
+-------------------------------------------------------------------------
+Generators
+------------------------------------------------------------------------
+-> Generators are used to generate the value for primary key
+
+-> Primary Key is a constraint which is combination of below 2 constraints
+
+		1) NOT NULL
+		2) UNIQUE
+-------------------------------------------------------------------------
+@Entity
+@Table(name = "STUDENTS_TBL")
+public class Student {
+
+	@Id
+	@Column(name = "STUDENT_ID")
+	@GeneratedValue
+	private Integer studentId;
+
+	@Column(name = "STUDENT_NAME")
+	private String studentName;
+
+	@Column(name = "STUDENT_EMAIL")
+	private String studentEmail;
+
+	@Column(name = "STUDENT_RANKS")
+	private Integer studentRank;
+}
+-------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

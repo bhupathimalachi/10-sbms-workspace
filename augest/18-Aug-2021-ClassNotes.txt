@@ -1,0 +1,85 @@
+Last Session : Building First Web application using Spring Boot
+---------------------------------------------------------------------------------
+-> To build web applications we will use below starter
+
+		spring-boot-starter-web
+
+-> web starter will provide Apache Tomcat as default container (Embedded Server)
+
+-> Embedded Server Runs on port Number 8080 (default port)
+
+-> To change port number we will use below property in application.properties file
+
+		server.port = 9090
+
+-> To compile jsp files we will use below starter
+
+		tomcat-embed-jasper
+----------------------------------------------------------------------------------
+-> To represent our class as Controller we are using @Controller annotation
+
+-> In web application Controller is mandatory to handle the request
+
+-> To bind controller methods to Http Request methods we will use below annotations
+
+		GET Request ------> @GetMapping
+
+		POST Request -----> @PostMapping
+
+		PUT Request ------> @PutMapping
+
+		DELETE Request ----> @DeleteMapping
+---------------------------------------------------------------------------------
+-> DispatcherServlet : It is a predefined Servlet which acts as front controller and it is responsible to perform pre-processing and post-processing of a request.
+
+-> HandlerMapper : It is used to identify which request should be processed by which controller.
+
+-> Controller : It is responsible to handle the request and return response in the form of ModelAndView object.
+
+-> ModelAndView: Model represents data in key-value format where as view represents logical view name.
+
+-> ViewResolver : It is used to identify view files location based on prefix and suffix.
+
+		prefix + viewname + suffix
+
+-> View : It is used to render model data in the view file.
+----------------------------------------------------------------------------------
+-> In web applications we will perform below 2 operations
+
+		1) Sending data from controller to UI
+
+		2) Taking data from UI to Controller
+----------------------------------------------------------------------------------
+Sending Data From Controller to UI
+---------------------------------------------------------------------------------
+-> To send data from Controller to UI we will use Model/ModelAndView object
+
+-> Model is a Map which represents data in the form of Key-value pair
+
+	model.addAttribute(String key, Object value)
+
+-> We can get the value using Key
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

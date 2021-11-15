@@ -1,0 +1,75 @@
+Last session : What is Spring Boot ?
+-------------------------------------------------------------------------
+What is Spring framework?
+What type of applications can be developed using Spring?
+What are the modules in Spring?
+What is the drawback with Spring framework?
+What is Spring Boot?
+-------------------------------------------------------------------------
+Today's session : What are the advantages of Spring Boot?
+--------------------------------------------------------------------------> Spring Boot is an approach to develop Spring Based applications with minimal configurations.
+
+-> Spring Boot is not replacement for Spring framwork because Spring Boot Internally uses Spring framework only.
+------------------------------------------------------------------------
+Spring Boot Advantages
+------------------------------------------------------------------------
+-> Starter Poms
+
+-> Version Management
+
+-> Auto Configuration
+
+-> Embedded Servers
+
+-> Actuators etc..
+-------------------------------------------------------------------------
+
+-> Spring Boot provided starter poms to simplify maven/gradle configurations.
+
+		a)spring-boot-starter-web
+		b)spring-boot-starter-data-jpa
+		c)spring-boot-starter-mail
+		d)spring-boot-starter-security
+		e)spring-boot-starter-actuator
+		f)spring-boot-starter-webflux
+
+-> When we are adding dependencies in pom.xml no need to configure version for dependency because Spring Boot will take care of versions.
+Spring Boot will understand which version is compatiable with Spring Boot version and it will consider that.
+
+->Auto-Configuration in one of the main advantage of the Spring Boot. Autoconfiguration will take care of configuration required to run our application.
+
+-> Spring Boot providing Embedded Servers to run our web applications. Tomcat is the default embedded server in spring boot.
+
+-> Actuators are used to provide production ready features from the application. Actuators will help us in monitoring and maintaing the application.
+
+		a) classes loaded
+		b) threads running (thread dump)
+		c) objects created (heap dumps)
+		d) url mapping
+		e) last 100 http req info
+		f) config Props
+		g) env
+		h) health
+		i) info etc....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

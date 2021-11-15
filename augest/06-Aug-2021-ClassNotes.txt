@@ -1,0 +1,14 @@
+Last Session : Connection Pooling
+---------------------------------------------------------------------------------
+-> In Spring Boot, Hikari is default connection pool
+---------------------------------------------------------------------------------
+Today's session : How to rollback transaction
+--------------------------------------------------------------------------------
+
+-> The unit amount of work we are doing is called as one transaction.
+
+-> In Data JPA, Transaction is defaulted to Auto-Commit.
+
+-> Whenever Non-Select query got executed by default transaction will be committed.
+
+--------------------------------------------------------------------------------

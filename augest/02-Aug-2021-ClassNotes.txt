@@ -1,0 +1,58 @@
+Last Session : Custom Queries
+----------------------------------------------------------------------------------
+-> We can write queries and we can ask data jpa to execute those queries
+
+-> We can write 2 types of custom queries
+
+		1) Native SQL
+		2) HQL Queries
+
+-> Native SQL queries are database dependent queries
+
+-> HQL queries are database independent queries.
+
+-> HQL queries will be converted to SQL queries before execution.
+
+-> Dialect class will convert HQL query to SQL query
+
+-> To execute custom queries we will use @Query annotation
+
+--------------------------------------------------------------------------------
+-> From maintenence standpoint HQL queries are recommended
+
+-> From performance standpoint SQL queries are recommended
+---------------------------------------------------------------------------------
+Assignment : Develop Data JPA application to perform Insert, Update and Delete operations using Custom Queries
+----------------------------------------------------------------------------------
+Today's session : JpaRepository
+---------------------------------------------------------------------------------
+-> JpaRepository is a predefined interface available in Spring Data JPA
+
+-> By using JpaRepository also we can perform Crud Operations
+
+-> JpaRepository is superior than CrudRepository
+
+-> JpaRepository supporting below 3 additional functionalities
+
+		1) Pagination
+		2) Sorting
+		3) Query By Example
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

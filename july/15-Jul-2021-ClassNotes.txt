@@ -1,0 +1,91 @@
+Last session : Constructor Injection
+-------------------------------------------------------------------------
+-> The process of injecting dependent bean object into target bean object using target bean constructor is called as Constructor Injection.
+
+-> By default IOC will call 0-param constructor to create bean object.
+
+-> If we want IOC to call parameterized constructor to create the object we will specify @Autowired annotation.
+
+Note: If we have only one constructor in the target class then @Autowired annotation is optional.
+------------------------------------------------------------------------
+Today's session : Field Injection
+-----------------------------------------------------------------------
+-> It is the process of injecting dependent bean object into target bean object using target bean variable is called as Field Injection.
+
+-> To enable Field Injection we will write @Autowired annotation at variable level.
+-----------------------------------------------------------------------
+@Service
+public class UserService{
+	
+     @Autowired
+     private UserDao userdao;
+    
+}
+------------------------------------------------------------------------
+-> When we specify @Autowired annotation at variable level then IOC will use Reflection API to inject dependent object into target object.
+
+Note: Field Injection not recommended to use
+
+1) It is breaking oops principle
+
+2) It is not supporting for Immutable dependencies
+
+3) It is breaking Single Responsibility Principle
+
+4) It is hiding dependencies
+--------------------------------------------------------------------------------------------------------------
+Sample code to access private variables from outside of the class using Reflection api
+--------------------------------------------------------------------------------------------------------------
+package in.ashokit.beans;
+
+public class User {
+
+	private int age;
+
+	public int getAge() {
+		return age;
+	}
+}
+--------------------------------------------------------------------------------------------------------------
+package in.ashokit.beans;
+
+import java.lang.reflect.Field;
+
+public class Test {
+
+	public static void main(String[] args) throws Exception {
+
+		Class<?> clz = Class.forName("in.ashokit.beans.User"); // to load the class
+
+		Object obj = clz.newInstance(); // creating object for the class which is loaded
+
+		Field field = clz.getDeclaredField("age"); // get the variable based on name
+
+		field.setAccessible(true); // setting accessibility for variable
+
+		field.set(obj, 29); // set the value for the variable
+
+		User user = (User) obj; // typecasting to class obj
+
+		System.out.println(user.getAge()); // calling getter method
+
+	}
+}
+-------------------------------------------------------------------------------------------------------------
+
+
+a = 10 ; //constructor
+
+a = 10;  //field
+
+a = 10 //setter
+
+
+
+
+
+
+
+
+
+

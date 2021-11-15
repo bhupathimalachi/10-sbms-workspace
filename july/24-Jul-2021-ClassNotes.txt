@@ -1,0 +1,171 @@
+Last session : Best Practises In Persistence Layer Development
+-----------------------------------------------------------------------
+Today's session : Spring Data JPA Introduction
+-----------------------------------------------------------------------
+-> Spring Data JPA came into market to simplify CRUD operations in applications.
+
+		C - create
+		R - Retrieve
+		U - Update
+		D - Delete
+
+-> Performing CRUD operation is very common requirement in applications.
+
+-> Spring Data JPA provided Repositories to simplify CRUD operations
+
+	1) CrudRepository
+	2) JpaRepository
+
+-> CrudRepository provided methods to perform Crud Operations
+
+-> JpaRepository provided methods to perform Crud Operations + Pagination + Sorting.
+------------------------------------------------------------------------
+Note: DB setup should be there in our system
+------------------------------------------------------------------------
+Developing First Application Using Data JPA
+------------------------------------------------------------------------
+1) Create Spring Starter Project with below dependencies
+
+		1) spring-boot-starter
+		2) spring-boot-starter-data-jpa
+		3) oracle driver
+
+2) Create Entity Class (Mapping with DB table)
+
+3) Create Repository Interface and extend properties from JPA Repository
+
+4) Configure Data Source & ORM Properties in application.properties file
+
+5) Call Repository methods and test the application.
+
+-----------------------------------------------------------------------
+package in.ashokit.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "USER_DETAILS")
+public class UserEntity {
+
+	@Id
+	@Column(name = "USER_ID")
+	private Integer userId;
+
+	@Column(name = "USER_NAME")
+	private String uname;
+
+	@Column(name = "USER_EMAIL")
+	private String email;
+
+	@Column(name = "USER_AGE")
+	private Integer age;
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+
+	public String getUname() {
+		return uname;
+	}
+
+	public void setUname(String uname) {
+		this.uname = uname;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
+	@Override
+	public String toString() {
+		return "UserEntity [userId=" + userId + ", uname=" + uname + ", email=" + email + ", age=" + age + "]";
+	}
+
+}
+------------------------------------------------------------------------
+package in.ashokit.repository;
+
+import java.io.Serializable;
+
+import org.springframework.data.repository.CrudRepository;
+
+import in.ashokit.entity.UserEntity;
+
+public interface UserRepository extends CrudRepository<UserEntity, Serializable> {
+
+}
+------------------------------------------------------------------------
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521/XE
+spring.datasource.username=IES_DEV
+spring.datasource.password=IES_DEV
+spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver
+
+spring.jpa.hibernate.ddl-auto=update
+------------------------------------------------------------------------
+package in.ashokit;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import in.ashokit.entity.UserEntity;
+import in.ashokit.repository.UserRepository;
+
+@SpringBootApplication
+public class Application {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
+
+		UserRepository repository = context.getBean(UserRepository.class);
+
+		// System.out.println(repository.getClass().getName());
+
+		UserEntity entity = new UserEntity();
+		entity.setUserId(101);
+		entity.setUname("Ashok");
+		entity.setEmail("ashokitschool@gmail.com");
+		entity.setAge(28);
+
+		repository.save(entity);
+	}
+}
+-----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

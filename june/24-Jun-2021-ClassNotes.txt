@@ -1,0 +1,69 @@
+Last session (01-Class) : Course Details
+
+Today's session : What is Spring Framework & Why Spring Boot Came?
+-------------------------------------------------------------------------
+-> Spring is an application development framework
+
+-> By using Spring framework we can develop end to end application
+
+-> By using Spring framework we can develop below types of applications
+
+	a) Standalone applications
+	b) Web applications (Customer 2 Business Communaction)
+	c) Distributed applications (Business 2 Business Communication)
+
+-> Spring Framework is developed in Modular Fashion
+	
+	a) Spring Core
+	b) Spring Context
+	c) Spring DAO
+	d) Spring ORM
+	e) Spring AOP
+	f) Spring Web MVC
+
+Note: Spring Core Module is base module for other modules in Spring Framework.
+
+-> Spring Core Module providing fundamental concepts of Spring Framework. They are
+
+	a) IOC container
+	b) Dependency Injection
+
+-> Spring supports loosely coupling among the classes in the application.
+
+-> Spring is an versatile framework (Spring can integrate with other frameworks easily)
+
+-> Spring is a Non-Invasive Framework (Pojo model programming)
+
+-------------------------------------------------------------------------
+When Spring framework is already available why Spring Boot Came into picture?
+-------------------------------------------------------------------------
+-> Spring framework providing lot of things for us but We have to integrate all those things by writing lot of configuration.
+
+-> Programmer is responsible to take care of configurations manually in spring framework.
+------------------------------------------------------------------------
+
+-> Spring Boot is an approach to develop Spring Based applications with less configurations.
+
+-> Spring Boot came into market to provide Auto-Configurations for applications development.
+
+-> Spring Boot internally uses Spring framework only.
+
+Note: Spring Boot is not replacement for Spring framwork. Spring Boot promoting Spring framework.
+-------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,87 @@
+Last session : Spring Boot application folder structure
+-------------------------------------------------------------------------
+-> Spring Boot application we have created using Maven build tool
+
+	src/main/java -------------> application source code here
+
+	src/main/resources --------> .xml, .yml, .props here
+
+        src/test/java -------------> unit test classes here
+
+	Maven Dependencies --------> Dependencies will display here
+
+	target -------------------> .class files & artifacts
+
+	pom.xml ------------------> Maven config file
+
+
+-> When we create boot application we are getting "Application.java" class by default. This class is called as start class of Spring Boot.
+
+-> Spring Boot start class is also called as Main class in boot application.
+
+-> Spring Boot application execution will begin from main class only.
+
+------------------------------Application.java---------------------------
+@SpringBootApplication
+public class Application {
+
+     public static void main(String... args){
+	SpringApplication.run(Application.class, args);
+     }
+}
+-------------------------------------------------------------------------
+-> application.properties file will be created under src/main/resource folder.
+
+-> In this properties we will configure application config props like
+
+		1) data source
+		2) smtp
+		3) actuators
+		4) kafka
+		5) redis etc..
+
+Note: Instead of properties file we can use .yml file also.
+
+-> YAML/YML stands for Yet Another Markup Language
+
+-------------------------------------------------------------------------
+-> In boot application by default test class also created
+
+
+	@SpringBootTest ----> To represent class as SB test class
+
+	@Test ------> To represent one method as test case
+		
+
+-------------------------------ApplicationTest.java----------------------
+@SpringBootTest
+class ApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+}
+-------------------------------------------------------------------------
+-> In Boot application by default we will get below 2 dependencies
+
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+
+
+
+
+
+
+

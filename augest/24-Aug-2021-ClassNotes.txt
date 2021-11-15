@@ -1,0 +1,122 @@
+Last Session : Query Params & Path Params
+--------------------------------------------------------------------------------
+-> To work with Query parameters we will use @RequestParam annotation
+
+-> To work with Path Parameters we will use @PathVariable annotation
+---------------------------------------------------------------------------------
+-> Query Parameters & Path Parameters will display data in URL.
+
+-> Query Parameters & Path Parameters are only recommended to send Small and non-sensitive text data.
+--------------------------------------------------------------------------------
+-> If we want to send huge & sensitive data then we should go for Request body.
+
+-> HTTP POST, PUT and DELETE requests contains request body where as GET request doesn't have request body.
+--------------------------------------------------------------------------------
+
+@Data
+public class User {
+
+	private String uname;
+	private String pwd;
+	private String email;
+	private Long phno;
+}
+---------------------------------------------------------------------------------
+package in.ashokit.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import in.ashokit.bindings.User;
+
+@Controller
+public class UserController {
+
+	@GetMapping("/user")
+	public String loadForm() {
+		return "userReg";
+	}
+
+	@PostMapping("/user")
+	public String userRegister(User user, Model model) {
+		System.out.println(user);
+
+		// store data into database
+
+		model.addAttribute("uname", user.getUname());
+
+		return "userRegSuccess";
+	}
+
+}
+---------------------------------------------------------------------------------
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form action="user" method="POST">
+		<table>
+			<tr>
+				<td>Username:</td>
+				<td><input type="text" name="uname" /></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type="text" name="pwd" /></td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><input type="text" name="email" /></td>
+			</tr>
+			<tr>
+				<td>Phno:</td>
+				<td><input type="text" name="phno" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Register" /></td>
+			</tr>
+		</table>
+
+	</form>
+
+
+</body>
+</html>
+---------------------------------------------------------------------------------
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>Hi ${uname}, Your Registration Success.</h2>
+
+	<a href="user">Home</a>
+</body>
+</html>
+-------------------------------------------------------------------------------
+server.port=9090
+
+spring.mvc.view.prefix=/pages/
+spring.mvc.view.suffix=.jsp
+--------------------------------------------------------------------------------
+
+
+
+
+
+
+
+

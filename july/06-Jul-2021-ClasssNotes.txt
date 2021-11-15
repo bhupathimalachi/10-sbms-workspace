@@ -1,0 +1,75 @@
+Last session : Banner & Runner In Spring Boot
+-------------------------------------------------------------------------
+Today's session: @SpringBootApplication annotation
+-------------------------------------------------------------------------
+-> @SpringBootApplication annotation is used to represent start class.
+-------------------------------------------------------------------------
+@SpringBootApplication
+public class Application{
+   
+   public static void main(String[] args){
+            SpringApplication.run(Application.class, args);
+   }
+}
+-------------------------------------------------------------------------
+-> @SpringBootApplication annotation is equal to below 3 annotations
+
+	@SpringBootConfiguration
+	@EnableAutoConfiguration
+	@ComponentScan
+-------------------------------------------------------------------------
+Component Scan
+-------------------------------------------------------------------------
+-> Component Scan is the process of identifying java classes which are represented as Spring Beans.
+
+-> In Spring Boot, Component Scan is enabled by default. When we run our boot application "Component Scan" will happen by default.
+
+-> Component Scan will follow package naming convention to scan for the java classes which are represented as spring beans.
+
+-> Component Scan always will start from base package.
+
+-> The package which contains boot start class is called as base pkg.
+
+-> After base package scanning got completed, it will start scanning of sub packages of base package.
+
+-> The package names which are starting with base package name are called as sub-packages of base package.
+
+			in.ashokit (base pkg)
+                        in.ashokit.service --------- will be scanned
+                        in.ashokit.dao ------------- will be scanned
+                        in.ashokit.util ------------ will be scanned
+                        com.ashokit.controller ----- will not be scanned
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

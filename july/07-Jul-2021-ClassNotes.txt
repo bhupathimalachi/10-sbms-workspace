@@ -1,0 +1,40 @@
+Last session : Component Scanning in Spring Boot
+------------------------------------------------------------------------
+Today's session : Frequently Used Annotations In Spring Boot apps
+------------------------------------------------------------------------
+@Component
+@Service
+@Repository
+
+@Configuration
+@Bean
+
+@Controller
+@RestController
+
+@Autowired
+-------------------------------------------------------------------------
+@Component : To represent java class as Spring Bean.
+
+@Service: To represent java class as Spring Bean. This is used for service layer classes. Service layer classes contains business logic.
+
+@Repository : To represent java class as Spring Bean. This is used for dao layer classes/interfaces. Dao layer classes contains persistence logic.
+
+@Configuration : To represent java class as Configuration class. Beans customization we can do here.
+
+@Bean : The method which is responsible to create object for spring bean class. This is method level annotation.
+
+@Controller: To represent java class as request handler in web mvc applications. This is used in C 2 B applications.
+
+@RestController: To represent java class as Distributed Component. This is used in B 2 B applications.
+
+@Autowired: To perform dependency injection.
+----------------------------------------------------------------------------------
+
+
+
+
+
+
+
+

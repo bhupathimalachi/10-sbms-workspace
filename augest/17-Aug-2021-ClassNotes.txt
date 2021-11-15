@@ -1,0 +1,56 @@
+Last Session : Spring Web MVC Module & Spring MVC Architecture
+------------------------------------------------------------------------
+
+-> Spring Web MVC module is used to develop below 2 types of applications
+
+		1) Web applications ( C 2 B )
+		2) Distributed applications ( B 2 B )
+
+-> Spring Web MVC Architecture
+
+1) DispatcherServlet
+2) HandlerMapper
+3) Controller
+4) ModelAndView
+5) ViewResolver
+6) View
+------------------------------------------------------------------------
+Building First Web Application Using Spring Boot
+---------------------------------------------------------------------------------
+1) Create Spring Starter Project with below dependencies
+
+	i) spring-boot-starter-web
+	ii) tomcat-embed-jasper  (take this from mvn repo)
+
+2) Configure below properties in application.properties file
+
+	i) server port
+	ii) View Resolver
+
+3) Create Controller class using @Controller annotation
+
+4) Write the methods in controller and bind them to HTTP Request
+
+5) Create View Files (Presentation files)
+
+6) Start the application and test it
+
+----------------------------------------------------------------------------------
+Note: When we add spring-boot-starter-web dependency then it will give Apache Tomcat as default Embedded Container.
+---------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

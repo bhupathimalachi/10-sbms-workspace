@@ -1,0 +1,77 @@
+We have given 10-SBMS@6:30 AM Telegram group link for all enrolled students through email.
+
+We have given 10-SBMS google classroom link in telegram group.
+
+Note: If anybody not able to join in telegram group please send mail to ashokitpayments@gmail.com with your telegram account number then we will add you to that group.
+
+10-SBMS class updates will be given in that telegram group.
+
+Note: Daily check our telegram group before joining the session.
+-------------------------------------------------------------------------
+Last session : Component Scan and Annotations
+
+-------------------------------------------------------------------------
+-> Component Scan is the process which is used to identify spring beans available in the applications.
+
+-> Component Scan will start from base package then it will scan sub packages.
+------------------------------------------------------------------------
+Q) How to represent java class as Spring Bean
+------------------------------------------------------------------------
+-> We have below annotations to represent java class as Spring Bean.
+
+@Component
+@Service
+@Repository
+
+@Controller
+@RestController
+
+@Configuration
+@Bean   (It is method level annotation)
+-------------------------------------------------------------------------
+1) Spring Vs Spring Boot
+2) Spring Boot Introduction
+3) Spring Boot Advantages
+4) Spring Initializr (start.spring.io)
+5) Spring Boot starters
+6) Creating First Application Using Spring Boot
+7) Spring Boot application folder structure
+8) What is start class in Spring Boot
+9) What is run method and internals of run method
+10) How IOC will be created in Spring Boot 
+11) Banner in Spring Boot
+12) @SpringBootApplication annotation
+13) What is AutoConfiguration
+14) What is Component Scanning
+15) Stereotype annotations
+16) @Configuration vs @Bean
+
+
+
+Please complete payment & send below details to -> ashokitpayments@gmail.com
+
+1) Name & Contact Number
+3) Course Code (10-SBMS)
+4) Timings
+5) Payment screenshot  
+
+Bank Account Details
+-----------------------------
+Bank Name : State Of Bank India
+Branch Name : Atmakur
+Account Holder Name : Chintamaneni Jyothi
+Account Number : 39945460240
+IFSC Code : SBIN0018828
+
+
+
+
+
+
+
+
+
+
+
+
+

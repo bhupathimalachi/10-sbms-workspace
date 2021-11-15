@@ -1,0 +1,73 @@
+Last Session (09-Jul-2021) : StereopType annotations
+-------------------------------------------------------------------------
+10-Jul-2021 & 11-Jul-2021 : No classes
+------------------------------------------------------------------------
+Today's session (12-Jul-2021) : IOC & DI
+------------------------------------------------------------------------
+-> IOC & DI are fundemental concepts of Spring Framework.
+
+-> IOC stands for Inversion of control
+
+-> DI stands for Dependency Injection
+
+-> In spring framework, IOC container is responsible to perform dependency injection among the classes.
+
+-> If we use IOC to perform Dependency Injection then we can achieve loosely coupling among the classes.
+------------------------------------------------------------------------
+-> Application will contain several classes
+
+-> As part of application execution one class should talk to another class.
+
+-> In java, we can use below 2 ways to call one class method in another class method.
+
+	1) Inheritence
+	2) Composition
+
+-> If we use either Inheritence or Composition then our classes will become tighlty coupled.
+
+-> To avoid tighlty coupling among the classes Spring provided IOC & DI.
+-----------------------------------------------------------------------------------
+Q) What is Dependency Injection
+----------------------------------------------------------------------------------
+-> The process of Injecting one class object into another class is called as Dependency Injection.
+
+-> We can perform Dependency Injection in 3 ways
+
+	1) Setter Injection
+	2) Constructor Injection
+	3) Field Injection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

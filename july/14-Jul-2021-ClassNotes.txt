@@ -1,0 +1,32 @@
+Last session (12-Jul-2021) : Dependency Injection
+------------------------------------------------------------------------
+Yesterday (12-Jul-2021) : Class Got Cancelled
+------------------------------------------------------------------------
+Today's session : Constructor Injection & Field Injection
+------------------------------------------------------------------------
+-> IOC is a principle which going to manage and colloborate dependencies among the objects available in the application.
+
+-> IOC will perform Dependency Injection
+
+-> The process of injecting one class object into another class is called as Dependency Injection.
+
+-> We can perform dependency injection in 3 ways
+
+	1) Setter Injection
+	2) Constructor Injection
+	3) Field Injection
+
+-> If dependent bean object injected into target bean object through target bean setter method then it is called as 'Setter Injection'.
+
+-> If dependent bean object injected into target bean object through target bean constructor then it is called as 'Constructor Injection'.
+
+-> If dependent bean object injected into target bean object through target bean variable then it is called as 'Field Injection'.
+
+-> To perform dependency injections we are using @Autowired.
+
+
+
+
+
+
+

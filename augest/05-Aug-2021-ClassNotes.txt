@@ -1,0 +1,67 @@
+Last Session : Generators, Sequence Generator and Custom Generator
+-------------------------------------------------------------------------
+Today's session: Connection Pooling
+-------------------------------------------------------------------------
+
+-> If our application wants to communicate with database then we should have connection with database.
+
+	Connection con = DriverManager.getConnection(url,uname,pwd);
+
+-> If we get connection from database using above line then that connection will be called as Physical Connection.
+
+-> If we open physical connection with database then we are responsible to close that connection.
+
+		con.close( );
+
+-> If we don't close that connection other resources can't access that connection.
+
+-> If connections are completed in DB then we will get Connections Exhausted Problem.
+
+
+Note: Every db will have limited no.of connections.
+----------------------------------------------------------------------------------
+
+-> To avoid DB connections problems we will use Connection Pooling.
+
+-> Connection Pooling is the process of keeping connections ready which are required for our application.
+
+-> Connection Pool will be managed by Pool Manager
+
+-> When the application got started then Connection Pool will be created and it will keep connections ready
+
+-> The programs which requires DB connection will get that connection from Connection Pool instead of getting connection from Database.
+---------------------------------------------------------------------------------
+-> Hikari Connection Pool is the default connection pool using in Spring data jpa applications
+----------------------------------------------------------------------------------
+-> In some applications we will use Server Managed Connection Pools
+
+----------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

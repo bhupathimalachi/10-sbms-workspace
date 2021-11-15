@@ -1,0 +1,86 @@
+Last session (02-Jul-2021) : Internals of run( ) method
+-------------------------------------------------------------------------
+03-Jul-2021 & 04-Jul-2021 : Classes Not Happend
+------------------------------------------------------------------------
+Today's session : Banner in Spring Boot
+-------------------------------------------------------------------------
+
+-> run( ) method is entry point for boot application execution
+
+	1) It creates bootstrap context
+	2) It loads listeners
+	3) It loads initializers
+	4) It will prepare environment
+	5) It will create application context
+	6) It will print banner
+	7) It will call runners
+	8) It will return IOC reference (ConfigurableApplicationContext)
+
+-> Based on starters configured in pom.xml it will identify type of the application.
+
+ 	spring-boot-starter-webflux ===> Reactive
+	spring-boot-starter-web ====> Web Servlet
+	spring-boot-starter =====> Default Standalone
+
+-> Based on type of the boot application, it will create ApplicationContext (IOC).
+-------------------------------------------------------------------------
+
+-> When we start spring boot application we can see spring logo on console that is called as Banner in Spring Boot.
+
+-> We can customize banner text and we can stop the banner also.
+
+-> Spring Boot banner having below modes
+
+		1) OFF   ========> Banner will not print
+		2) LOG   =========> Banner will print on log file
+		3) CONSOLE (Default) ===> Will print on console
+
+-> To set banner mode we can write below property in application.properties file
+
+	spring.main.banner-mode = off | console | log
+
+-> We can customize banner text by creating banner.txt file under src/main/resource folder. Keep ASCII text in banner.txt file.
+
+-> If we don't have banner.txt file, boot will print default banner (spring logo).
+
+-------------------------------------------------------------------------
+Runners in Spring Boot
+------------------------------------------------------------------------
+-> Runners will be called from run ( ) method.
+
+-> Runners are used to execute the logic only one time once the application got started.
+
+Ex-1 : Loading data from DB to cache
+Ex-2 : Scheduling cron jobs 
+Ex-3 : Sending email once application got started etc...
+
+-> Spring Boot supports for 2 types Runners
+
+	1) ApplicationRunner
+	2) CommandLineRunner
+
+-------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
